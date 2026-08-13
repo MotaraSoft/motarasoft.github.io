@@ -34,6 +34,12 @@ export default defineConfig({
   description: 'Open-source desktop software for facial tracking and virtual-avatar control.',
   sitemap: {
     hostname: 'https://www.motara.org',
+    transformItems(items) {
+      return items.filter(({ url }) => {
+        const path = new URL(url, 'https://www.motara.org').pathname
+        return !/^\/(?:zh\/)?invite\//.test(path)
+      })
+    },
   },
   cleanUrls: true,
   rewrites: {
