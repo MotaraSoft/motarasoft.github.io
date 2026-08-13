@@ -32,6 +32,9 @@ const localSearch = {
 export default defineConfig({
   title: 'Motara',
   description: 'Open-source desktop software for facial tracking and virtual-avatar control.',
+  sitemap: {
+    hostname: 'https://www.motara.org',
+  },
   cleanUrls: true,
   rewrites: {
     'en/:rest*': ':rest*',
